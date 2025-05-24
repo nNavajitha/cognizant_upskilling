@@ -1,0 +1,134 @@
+/* 🌟 Global Reset - Making sure everything plays nice across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🎨 Base Styling - Creating a smooth, visually pleasant experience */
+body {
+    background-color: #f0f8ff; /* Soft blue tone for a calm feel */
+    padding: 20px;
+    font-family: 'Segoe UI', Arial, sans-serif; /* Ensure consistency */
+}
+
+/* 🏆 Header - Making it stand out with a gradient effect */
+#mainHeader {
+    background: linear-gradient(to right, #4CAF50, #81C784);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+/* 🚀 Navigation - Clean, simple, responsive */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #81C784; /* Smooth transition when hovering */
+}
+
+/* ✍️ Typography - Ensuring readability & consistency */
+h2, h3 {
+    text-transform: uppercase;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.8; /* Slightly improved spacing */
+    letter-spacing: 0.5px;
+    text-align: justify;
+}
+
+/* 📦 Cards - A modern way to present content */
+.eventCard {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for a softer design */
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #444; /* Slightly softened text */
+}
+
+h3, p {
+    font-size: 16px;
+}
+
+/* 🌄 Hero Section - A stunning full-width background */
+.hero-section {
+    background: url('assets/images/bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 📜 Lists - Making them neat and appealing */
+ul {
+    list-style-type: square;
+    padding-left: 25px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* 📊 Tables - Organized for clarity */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Slightly lighter for contrast */
+}
+
+/* 📰 News Multi-Column Layout */
+.news-section {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+    margin: 30px 0;
+}
+
+/* 📱 Responsive Design - Optimized for mobile */
+@media screen and (max-width: 768px) {
+    nav a {
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    .event-img {
+        width: 100%;
+    }
+
+    .news-section {
+        column-count: 1; /* Single-column for better readability */
+    }
+}
