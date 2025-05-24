@@ -1,0 +1,10 @@
+/* styles.css */
+body {
+  background-color: #eef2f5;
+  color: #343a40;
+}
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
