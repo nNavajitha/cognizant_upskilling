@@ -1,0 +1,47 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Community Event Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Local Community Event Portal</h1>
+  </header>
+
+  <section class="form-section">
+    <form id="registrationForm">
+      <input name="username" placeholder="Name" required />
+      <input name="email" type="email" placeholder="Email" required />
+      <select name="event">
+        <option value="Book Club">Book Club</option>
+      </select>
+      <button type="submit">Register</button>
+    </form>
+    <div id="formMessage"></div>
+  </section>
+
+  <section class="filter-section">
+    <label for="categoryFilter">Filter by category:</label>
+    <select id="categoryFilter">
+      <option value="all">All</option>
+      <option value="music">Music</option>
+      <option value="workshop">Workshop</option>
+      <option value="wellness">Wellness</option>
+      <option value="literature">Literature</option>
+    </select>
+  </section>
+
+  <section id="event-container"></section>
+
+  <footer>
+    <p>&copy; 2025 Local Community Portal</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
