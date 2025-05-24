@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Events Hub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    nav {
+      background-color: #004085;
+      color: white;
+      padding: 10px 20px;
+    }
+    nav a {
+      color: white;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+    section {
+      margin: 30px 0;
+    }
+    h1, h2, h3 {
+      color: #343a40;
+    }
+    .highlight {
+      background: #ffffcc;
+      padding: 2px 5px;
+    }
+    .event-img {
+      width: 160px;
+      height: auto;
+      border: 2px solid #555;
+      border-radius: 5px;
+    }
+    table {
+      margin-top: 10px;
+      width: 100%;
+      border-spacing: 10px;
+    }
+    td {
+      text-align: center;
+    }
+    footer {
+      border-top: 1px solid #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+    <a href="help.html" target="_blank">Help</a>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section id="home">
+    <h1>Welcome to Our Local Community Portal</h1>
+    <div id="welcomeBanner" style="background-color: #d1ecf1; padding: 15px;">
+      <h2>Hello, Neighbor!</h2>
+      <p>Stay connected with what's happening around you.</p>
+      <p><strong style="color: crimson;">New:</strong> <span class="highlight">Early registrations now come with a surprise gift!</span></p>
+    </div>
+
+    <h3>Event Preview Video</h3>
+    <video width="320" controls oncanplay="document.getElementById('videoStatus').innerText='Video is ready!'">
+      <source src="assets/videos/video.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <p id="videoStatus"></p>
+  </section>
+
+  <!-- Events Section -->
+  <section id="events">
+    <h2>What’s Happening?</h2>
+    <h3>Gallery of Previous Events</h3>
+    <table>
+      <tr>
+        <td><img src="assets/images/pg2.jpg" alt="Conference" title="Conference" class="event-img"></td>
+        <td><img src="assets/images/pg3 (2).jpg" alt="Music Event" title="Music Event" class="event-img"></td>
+        <td><img src="assets/images/pg4.jpg" alt="Concert" title="Concert" class="event-img"></td>
+      </tr>
+    </table>
+       <style>
+      .event-img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border: 3px solid #007bff;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .event-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      table {
+        width: 100%;
+        border-spacing: 20px;
+      }
+
+      td {
+        text-align: center;
+        vertical-align: top;
+      }
+    </style>
+
+    <h3>Register Now</h3>
+    <form id="register">
+      <label>Name: <input type="text" required placeholder="Your full name" autofocus></label><br><br>
+      <label>Email: <input type="email" required placeholder="you@example.com"></label><br><br>
+      <label>Date: <input type="date" required></label><br><br>
+      <label>Event Type:
+        <select id="eventType">
+          <option value="">Select</option>
+          <option value="music">Music</option>
+          <option value="volunteering">Volunteering</option>
+          <option value="learning">Workshop</option>
+        </select>
+      </label><br><br>
+      <label>Message:<br>
+        <textarea rows="3" placeholder="Your message..."></textarea>
+      </label><br><br>
+      <button type="button" onclick="document.getElementById('confirmMsg').value='Thanks for signing up!'">Submit</button><br><br>
+      <output id="confirmMsg"></output>
+    </form>
+
+    <h3>Leave Your Feedback</h3>
+    <form>
+      <label>Phone: <input type="text" id="phoneInput" onblur="validatePhone()"></label><br><br>
+      <label>Choose Fee:
+        <select onchange="displayFee(this)">
+          <option value="">--Choose--</option>
+          <option value="0">Free</option>
+          <option value="10">$10</option>
+        </select>
+      </label>
+      <p id="feeMsg"></p>
+      <label>Comments:<br>
+        <textarea id="feedbackBox" onkeyup="document.getElementById('charCounter').innerText = this.value.length" rows="4"></textarea>
+      </label>
+      <p>Characters: <span id="charCounter">0</span></p>
+    </form>
+    <img src="assets/images/pg5.jpg" alt="Click to zoom" id="promoImg" ondblclick="toggleSize()" style="width: 200px; cursor: pointer;">
+
+    <h3>Find Local Events</h3>
+    <button onclick="getLocation()">Get My Location</button>
+    <p id="locationDisplay"></p>
+    <button onclick="clearData()">Clear My Preferences</button>
+  </section>
+
+  <!-- Contact Section -->
+<section id="contact">
+    <h2>Get In Touch</h2>
+    <p>Email: <a href="mailto:support.events@gmail.com">support.events@gmail.com</a></p>
+    <p>Phone: 9361121775</p>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 YourCity Community Portal. Designed for the people.
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function validatePhone() {
+      const phone = document.getElementById('phoneInput').value;
+      if (!/^\d{10}$/.test(phone)) {
+        alert("Please enter a 10-digit phone number.");
+      }
+    }
+
+    function displayFee(sel) {
+      document.getElementById('feeMsg').innerText = sel.value ? `Fee: $${sel.value}` : '';
+    }
+
+    function toggleSize() {
+      const img = document.getElementById('promoImg');
+      img.style.width = img.style.width === '400px' ? '200px' : '400px';
+    }
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          pos => {
+            document.getElementById("locationDisplay").innerText =
+              `Latitude: ${pos.coords.latitude}, Longitude: ${pos.coords.longitude}`;
+          },
+          err => {
+            alert("Unable to retrieve location.");
+          },
+          { enableHighAccuracy: true, timeout: 5000 }
+        );
+      } else {
+        alert("Geolocation not supported.");
+      }
+    }
+
+    function clearData() {
+      localStorage.clear();
+      sessionStorage.clear();
+      alert("Preferences cleared.");
+    }
+
+    // Save preferred event type
+    window.onload = () => {
+      const saved = localStorage.getItem('eventPref');
+      if (saved) document.getElementById('eventType').value = saved;
+    }
+
+    document.getElementById('eventType').addEventListener('change', function() {
+      localStorage.setItem('eventPref', this.value);
+    });
+
+    window.onbeforeunload = () => "You have unsaved changes. Are you sure you want to leave?";
+  </script>
+</body>
+</html>
