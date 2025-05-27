@@ -10,5 +10,6 @@ class DivisionTryCatch {
         } catch (ArithmeticException e) {
             System.out.println("Error: Cannot divide by zero.");
         }
+        sc.close();
     }
 }

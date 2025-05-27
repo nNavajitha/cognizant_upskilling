@@ -12,5 +12,6 @@ class NumberGuessing {
             else if (guess > number) System.out.println("Too high");
             else System.out.println("Correct!");
         }
+        sc.close();
     }
 }

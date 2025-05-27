@@ -8,5 +8,6 @@ class HashMapExample {
         System.out.print("Enter ID to retrieve name: ");
         int id = sc.nextInt();
         System.out.println("Name: " + map.getOrDefault(id, "Not found"));
+        sc.close();
     }
 }

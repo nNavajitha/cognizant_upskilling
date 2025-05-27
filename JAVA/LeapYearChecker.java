@@ -6,5 +6,6 @@ class LeapYearChecker {
         int year = sc.nextInt();
         boolean isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
         System.out.println(isLeap ? "Leap Year" : "Not a Leap Year");
+        sc.close();
     }
 }

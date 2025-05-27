@@ -9,5 +9,6 @@ class Fibonacci {
         System.out.print("Enter n: ");
         int n = sc.nextInt();
         System.out.println("Fibonacci(" + n + ") = " + fibonacci(n));
+        sc.close();
     }
 }

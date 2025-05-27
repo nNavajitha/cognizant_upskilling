@@ -12,5 +12,6 @@ class ArraySumAverage {
         }
         double avg = (double) sum / n;
         System.out.println("Sum: " + sum + ", Average: " + avg);
+        sc.close();
     }
 }

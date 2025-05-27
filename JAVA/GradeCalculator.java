@@ -11,5 +11,6 @@ class GradeCalculator {
         else if (marks >= 60) grade = 'D';
         else grade = 'F';
         System.out.println("Grade: " + grade);
+        sc.close();
     }
 }

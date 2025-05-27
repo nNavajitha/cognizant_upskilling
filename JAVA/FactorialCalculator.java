@@ -9,5 +9,6 @@ class FactorialCalculator {
             fact *= i;
         }
         System.out.println("Factorial: " + fact);
+        sc.close();
     }
 }

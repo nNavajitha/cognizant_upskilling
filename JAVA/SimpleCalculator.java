@@ -18,5 +18,6 @@ class SimpleCalculator {
                 break;
             default: System.out.println("Invalid operator");
         }
+        sc.close();
     }
 }

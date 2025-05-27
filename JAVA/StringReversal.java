@@ -6,5 +6,6 @@ class StringReversal {
         String input = sc.nextLine();
         String reversed = new StringBuilder(input).reverse().toString();
         System.out.println("Reversed: " + reversed);
+        sc.close();
     }
 }

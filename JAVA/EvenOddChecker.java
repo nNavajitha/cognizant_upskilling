@@ -5,5 +5,6 @@ class EvenOddChecker {
         System.out.print("Enter an integer: ");
         int num = sc.nextInt();
         System.out.println(num % 2 == 0 ? "Even" : "Odd");
+        sc.close();
     }
 }

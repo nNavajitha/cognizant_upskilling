@@ -10,5 +10,6 @@ class ArrayListExample {
             students.add(name);
         }
         System.out.println("Student List: " + students);
+        sc.close();
     }
 }
